@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Meta tag para responsividade -->
   <title>Chárraiá do Vincent</title>
   <style>
     body {
@@ -10,6 +11,7 @@
       color: #4e2a05;
       text-align: center;
       padding: 40px;
+      margin: 0;
     }
 
     .card {
@@ -20,6 +22,8 @@
       display: inline-block;
       max-width: 600px;
       border: 3px dashed #f59e0b;
+      margin: 0 auto;
+      width: 100%;
     }
 
     h1 {
@@ -57,6 +61,41 @@
     .bandeirinhas svg {
       width: 100%;
       height: auto;
+    }
+
+    /* Ajustes para telas menores */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 22px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      .button {
+        padding: 12px 24px;
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      .button {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+
+      .card {
+        padding: 20px;
+      }
     }
   </style>
 </head>
@@ -98,3 +137,6 @@
     <br><br>
     <a class="button" href="https://www.google.com/maps?q=Rua+Fera+das+Águas,+71+-+Tancredo+Neves" target="_blank">📍 Ver Localização</a>
   </div>
+
+</body>
+</html>
