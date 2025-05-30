@@ -1,1 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chárraiá do Vincent</title>
+  <style>
+    body {
+      font-family: 'Trebuchet MS', sans-serif;
+      background: linear-gradient(to bottom, #fff8e1, #ffe0b2);
+      color: #4e2a05;
+      text-align: center;
+      padding: 40px;
+      margin: 0;
+    }
 
+    .card {
+      max-width: 600px;
+      width: 600px;
+      margin: 40px auto;
+      padding: 40px 30px;
+      border-radius: 20px;
+      background: #fffbea;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      border: 3px dashed #f59e0b;
+      box-sizing: border-box;
+      display: block;
+    }
+
+    h1 {
+      color: #c2410c;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .button {
+      margin-top: 30px;
+      padding: 14px 28px;
+      background-color: #c2410c;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 10px;
+      display: inline-block;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #a6360b;
+    }
+
+    .bandeirinhas {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .bandeirinhas svg {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        width: 90%;
+        padding: 30px 20px;
+      }
+      h1 {
+        font-size: 22px;
+      }
+      p {
+        font-size: 16px;
+      }
+      .button {
+        padding: 12px 24px;
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 20px 15px;
+      }
+      h1 {
+        font-size: 18px;
+      }
+      p {
+        font-size: 14px;
+      }
+      .button {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Bandeirinhas visíveis em todos os momentos -->
+  <div class="bandeirinhas" aria-hidden="true">
+    <svg viewBox="0 0 600 60" preserveAspectRatio="xMidYMid meet" focusable="false" role="img">
+      <polygon points="0,0 20,45 40,0" fill="#f87171"/>
+      <polygon points="40,0 60,45 80,0" fill="#facc15"/>
+      <polygon points="80,0 100,45 120,0" fill="#4ade80"/>
+      <polygon points="120,0 140,45 160,0" fill="#60a5fa"/>
+      <polygon points="160,0 180,45 200,0" fill="#a78bfa"/>
+      <polygon points="200,0 220,45 240,0" fill="#f87171"/>
+      <polygon points="240,0 260,45 280,0" fill="#facc15"/>
+      <polygon points="280,0 300,45 320,0" fill="#4ade80"/>
+      <polygon points="320,0 340,45 360,0" fill="#60a5fa"/>
+      <polygon points="360,0 380,45 400,0" fill="#a78bfa"/>
+      <polygon points="400,0 420,45 440,0" fill="#f87171"/>
+      <polygon points="440,0 460,45 480,0" fill="#facc15"/>
+      <polygon points="480,0 500,45 520,0" fill="#4ade80"/>
+      <polygon points="520,0 540,45 560,0" fill="#60a5fa"/>
+      <polygon points="560,0 580,45 600,0" fill="#a78bfa"/>
+    </svg>
+  </div>
+
+  <!-- Card com conteúdo dinâmico -->
+  <div class="card" id="conteudo">
+    <!-- Conteúdo carregado via JavaScript -->
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hoje = new Date();
+      const dataEvento = new Date(2025, 5, 28); // 28 de junho de 2025 (mês zero-based)
+      const aposEvento = hoje >= dataEvento;
+
+      const conteudo = document.getElementById('conteudo');
+
+      if (aposEvento) {
+        conteudo.innerHTML = `
+          <h1>🎉 É HOJE! O Arraiá e Chá de Fralda do Vincent chegou! 🌽🍼<br>
+          Bora festejar com alegria, forró e muito carinho pro nosso caipirinha!</h1>
+          <a class="button" href="https://www.google.com/maps?q=Rua+Fera+das+Águas,+71+-+Tancredo+Neves" target="_blank" aria-label="Ver localização no Google Maps">📍 Ver Localização</a>
+        `;
+      } else {
+        conteudo.innerHTML = `
+          <h1>🎉 Puxe o fole e prepare a fralda:<br>vai ter Chárraiá pro Vincent!</h1>
+          <p><strong>🗓️ Data:</strong> 28 de Junho de 2025<br>
+          <strong>🕖 Horário:</strong> 19h<br>
+          <strong>📍 Local:</strong> Rua Fera das Águas, 71 - Tancredo Neves</p>
+          <p>Venha pro arraiá mais animado do ano, cheio de comidas típicas, brincadeiras e muita fofura!</p>
+          <p><strong>🍼 Sugestão de fraldas:</strong> Fralda tamanho M ou G (Babysec, Huggies ou Cremer) e um mimo à sua escolha</p>
+          <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSeiDKTrFyligEqNleuLx8usOMZ8eqU9yDPyCd92fylBbcpgEg/viewform?usp=dialog" target="_blank" aria-label="Confirmar presença no evento">Confirmar Presença</a>
+          <br><br>
+          <a class="button" href="https://www.google.com/maps?q=Rua+Fera+das+Águas,+71+-+Tancredo+Neves" target="_blank" aria-label="Ver localização no Google Maps">📍 Ver Localização</a>
+        `;
+      }
+    });
+  </script>
+
+</body>
+</html>
